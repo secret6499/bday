@@ -6,7 +6,7 @@ export default function BirthdayCelebration() {
   const [isCardOpen, setIsCardOpen] = useState(false)
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center px-4 sm:px-6 lg:px-8">
       <motion.div
         initial={{ scale: 0, rotate: -10 }}
         animate={{ scale: 1, rotate: 0 }}
@@ -16,43 +16,55 @@ export default function BirthdayCelebration() {
           damping: 20,
           delay: 0.3,
         }}
-        className="relative mb-2"
+        className="relative mb-4"
       >
-        <h1 className="text-4xl sm:text-5xl font-bold text-center text-green-600 mb-2">Happy Birthday!!</h1>
-        <div className="flex justify-center gap-3">
-          <Cake className="w-8 h-8 text-green-500" />
-          <Sparkles className="w-8 h-8 text-yellow-500" />
-          <Heart className="w-8 h-8 text-green-500" />
+        <h1 className="text-3xl sm:text-5xl font-bold text-center text-green-600 mb-3">
+          Happy Birthday!!
+        </h1>
+        <div className="flex justify-center gap-4">
+          <Cake className="w-6 h-6 sm:w-8 sm:h-8 text-green-500" />
+          <Sparkles className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-500" />
+          <Heart className="w-6 h-6 sm:w-8 sm:h-8 text-green-500" />
         </div>
-        <h3 className="text-2xl sm:text-3xl font-bold text-center text-green-600 mt-2">Chinni...</h3>
+        <h3 className="text-xl sm:text-3xl font-bold text-center text-green-600 mt-3">
+          Chinni...
+        </h3>
       </motion.div>
 
       <motion.div
-        className="w-full max-w-md mx-auto my-6"
+        className="w-full max-w-sm sm:max-w-md mx-auto my-6"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6 }}
       >
         <div
-          className={`relative cursor-pointer transition-all duration-700 ease-in-out transform ${isCardOpen ? "rotate-0" : "rotate-2"
-            }`}
+          className={`relative cursor-pointer transition-all duration-700 ease-in-out transform ${
+            isCardOpen ? "rotate-0" : "rotate-2"
+          }`}
           onClick={() => setIsCardOpen(!isCardOpen)}
         >
           <div
-            className={`bg-gradient-to-r from-green-400 to-purple-500 rounded-3xl p-14 sm:p-10 shadow-lg transition-all duration-700 transform ${isCardOpen ? "scale-95" : "scale-100"
-              }`}
+            className={`bg-gradient-to-r from-green-400 to-purple-500 rounded-2xl sm:rounded-3xl p-10 sm:p-14 shadow-lg transition-all duration-700 transform ${
+              isCardOpen ? "scale-95" : "scale-100"
+            }`}
           >
             <div className="absolute top-2 right-2">
               <motion.div
                 animate={{ rotate: 360 }}
-                transition={{ duration: 10, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+                transition={{
+                  duration: 10,
+                  repeat: Number.POSITIVE_INFINITY,
+                  ease: "linear",
+                }}
               >
-                <Sparkles className="w-6 h-6 text-yellow-200" />
+                <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-200" />
               </motion.div>
             </div>
 
             <div className="text-center text-white">
-              <p className="text-lg font-medium mb-4">Tap to {isCardOpen ? "close" : "open"} your card</p>
+              <p className="text-base sm:text-lg font-medium mb-4">
+                Tap to {isCardOpen ? "close" : "open"}
+              </p>
               <div className="flex justify-center">
                 <motion.div
                   animate={{
@@ -64,7 +76,7 @@ export default function BirthdayCelebration() {
                     repeat: Number.POSITIVE_INFINITY,
                   }}
                 >
-                  <Gift className="w-14 h-14 text-white" />
+                  <Gift className="w-10 h-10 sm:w-14 sm:h-14 text-white" />
                 </motion.div>
               </div>
             </div>
@@ -72,58 +84,53 @@ export default function BirthdayCelebration() {
 
           {/* Card content */}
           <AnimatePresence>
-            {isCardOpen && <motion.div
-              className="absolute inset-0 bg-white max-[350px]:-top-6 max-[350px]:min-h-[275px] rounded-3xl p-4 shadow-xl shadow-rose-100 flex flex-col items-center justify-center"
-              initial={{ rotate: 2, rotateX: -90, opacity: 0 }}
-              animate={{
-                rotate: isCardOpen ? 0 : 2,
-                rotateX: isCardOpen ? 0 : -90,
-                opacity: isCardOpen ? 1 : 0,
-                zIndex: isCardOpen ? 10 : -1,
-              }}
-              exit={{ rotateX: -90, opacity: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <div className="text-center">
-                <p className="text-purple-700 mb-2">
-                Just wanted to remind you—you're my favorite person. You make me happy by you being happy..
-                </p>
-                <p className="text-green-600 font-medium">I hope your birthday is full of love, magic, and everything that makes you smile 💖</p>
-                <div className="flex justify-center">
-                  <motion.div
-                    animate={{
-                      scale: [1, 1.2, 1],
-                    }}
-                    transition={{
-                      duration: 1.5,
-                      repeat: Number.POSITIVE_INFINITY,
-                    }}
-                  >
-                    <Heart className="w-8 h-8 stroke-none fill-rose-500" />
-                  </motion.div>
+            {isCardOpen && (
+              <motion.div
+                className="absolute inset-0 bg-white rounded-2xl sm:rounded-3xl p-4 shadow-xl shadow-rose-100 flex flex-col items-center justify-center"
+                initial={{ rotate: 2, rotateX: -90, opacity: 0 }}
+                animate={{
+                  rotate: isCardOpen ? 0 : 2,
+                  rotateX: isCardOpen ? 0 : -90,
+                  opacity: isCardOpen ? 1 : 0,
+                  zIndex: isCardOpen ? 10 : -1,
+                }}
+                exit={{ rotateX: -90, opacity: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className="w-full h-full flex items-center justify-center">
+                  <img
+                    src="/assets_task_01jtw8csp6e7e9thmhw5egga7c_1746852608_img_2 (1).webp"
+                    alt="Birthday card"
+                    className="w-full h-full object-contain rounded-xl"
+                  />
                 </div>
-              </div>
-            </motion.div>}
+              </motion.div>
+            )}
           </AnimatePresence>
         </div>
       </motion.div>
 
       <motion.div
-        className="w-full max-w-md mt-4"
+        className="w-full max-w-sm sm:max-w-md mt-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
       >
         <div className="text-center">
-          <p className="text-lg text-purple-700 mb-4">
-          May every wish you make today come true. You deserve the world, and I’ll always be here to remind you of that.
-          Hoping that you will live your entire life in a happy bubble...
+          <p className="text-sm sm:text-lg text-purple-700 mb-4">
+            Just wanted to remind you—you're my favorite person. You make me
+            happy by you being happy.. May every wish you make today come true.
+            You deserve the world, and I'll always be here to remind you of
+            that. Hoping that you will live your entire life in a happy
+            bubble...
           </p>
           <div className="flex justify-center items-center gap-2">
-            <p className="text-green-600 font-medium">Enjoy the day yaar!! 🫶</p>
+            <p className="text-green-600 font-medium">
+              Enjoy the day yaar!! 🫶
+            </p>
           </div>
         </div>
       </motion.div>
     </div>
-  )
+  );
 }
