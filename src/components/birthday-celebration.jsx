@@ -18,13 +18,13 @@ export default function BirthdayCelebration() {
         }}
         className="relative mb-2"
       >
-        <h1 className="text-4xl sm:text-5xl font-bold text-center text-pink-600 mb-2">Happy Birthday!!</h1>
+        <h1 className="text-4xl sm:text-5xl font-bold text-center text-green-600 mb-2">Happy Birthday!!</h1>
         <div className="flex justify-center gap-3">
-          <Cake className="w-8 h-8 text-pink-500" />
+          <Cake className="w-8 h-8 text-green-500" />
           <Sparkles className="w-8 h-8 text-yellow-500" />
-          <Heart className="w-8 h-8 text-pink-500" />
+          <Heart className="w-8 h-8 text-green-500" />
         </div>
-        <h3 className="text-2xl sm:text-3xl font-bold text-center text-pink-600 mt-2">Chinni...</h3>
+        <h3 className="text-2xl sm:text-3xl font-bold text-center text-green-600 mt-2">Chinni...</h3>
       </motion.div>
 
       <motion.div
@@ -39,7 +39,7 @@ export default function BirthdayCelebration() {
           onClick={() => setIsCardOpen(!isCardOpen)}
         >
           <div
-            className={`bg-gradient-to-r from-pink-400 to-purple-500 rounded-3xl p-14 sm:p-10 shadow-lg transition-all duration-700 transform ${isCardOpen ? "scale-95" : "scale-100"
+            className={`bg-gradient-to-r from-green-400 to-purple-500 rounded-3xl p-14 sm:p-10 shadow-lg transition-all duration-700 transform ${isCardOpen ? "scale-95" : "scale-100"
               }`}
           >
             <div className="absolute top-2 right-2">
@@ -88,7 +88,7 @@ export default function BirthdayCelebration() {
                 <p className="text-purple-700 mb-2">
                 Just wanted to remind you—you're my favorite person. You make me happy by you being happy..
                 </p>
-                <p className="text-pink-600 font-medium">I hope your birthday is full of love, magic, and everything that makes you smile 💖</p>
+                <p className="text-green-600 font-medium">I hope your birthday is full of love, magic, and everything that makes you smile 💖</p>
                 <div className="flex justify-center">
                   <motion.div
                     animate={{
@@ -120,7 +120,7 @@ export default function BirthdayCelebration() {
           Hoping that you will live your entire life in a happy bubble...
           </p>
           <div className="flex justify-center items-center gap-2">
-            <p className="text-pink-600 font-medium">Enjoy the day yaar!! 🫶</p>
+            <p className="text-green-600 font-medium">Enjoy the day yaar!! 🫶</p>
           </div>
         </div>
       </motion.div>
