@@ -50,11 +50,11 @@ function Loader() {
             ) : (
               <Heart
                 className={`w-${4 + (i % 4)} h-${4 + (i % 4)} ${i % 3 === 0
-                    ? "text-pink-300"
+                    ? "text-green-300"
                     : i % 3 === 1
-                      ? "text-pink-400"
+                      ? "text-green-400"
                       : "text-purple-300"
-                  } ${i % 2 === 0 ? "fill-pink-100" : "fill-pink-200"} opacity-70`}
+                  } ${i % 2 === 0 ? "fill-green-100" : "fill-green-200"} opacity-70`}
               />
             )}
           </motion.div>
@@ -63,7 +63,7 @@ function Loader() {
 
       {/* Main loading card */}
       <motion.div
-        className="relative z-10 bg-white bg-opacity-80 backdrop-blur-sm rounded-3xl shadow-lg shadow-rose-100 p-8 border-4 border-pink-200 flex flex-col items-center max-w-xs mx-auto"
+        className="relative z-10 bg-white bg-opacity-80 backdrop-blur-sm rounded-3xl shadow-lg shadow-rose-100 p-8 border-4 border-green-200 flex flex-col items-center max-w-xs mx-auto"
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.5 }}
@@ -85,9 +85,9 @@ function Loader() {
             >
               <Heart
                 className={`w-8 h-8 ${i === 0
-                  ? "text-pink-400 fill-pink-200"
+                  ? "text-green-400 fill-green-200"
                   : i === 1
-                    ? "text-pink-500 fill-pink-300"
+                    ? "text-green-500 fill-green-300"
                     : "text-purple-400 fill-purple-200"
                   }`}
               />
@@ -96,7 +96,7 @@ function Loader() {
         </div>
 
         <motion.p
-          className="text-xl font-bold text-center text-pink-600 mb-3"
+          className="text-xl font-bold text-center text-green-600 mb-3"
           animate={{
             scale: [1, 1.05, 1],
           }}
