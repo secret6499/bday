@@ -18,21 +18,21 @@ export default function BirthdayCelebration() {
         }}
         className="relative mb-4"
       >
-        <h1 className="text-3xl sm:text-5xl font-bold text-center text-green-600 mb-3">
+        <h1 className="text-2xl sm:text-4xl font-bold text-center text-green-600 mb-3">
           Happy Birthday!!
         </h1>
-        <div className="flex justify-center gap-4">
-          <Cake className="w-6 h-6 sm:w-8 sm:h-8 text-green-500" />
-          <Sparkles className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-500" />
-          <Heart className="w-6 h-6 sm:w-8 sm:h-8 text-green-500" />
+        <div className="flex justify-center gap-3">
+          <Cake className="w-5 h-5 sm:w-7 sm:h-7 text-green-500" />
+          <Sparkles className="w-5 h-5 sm:w-7 sm:h-7 text-yellow-500" />
+          <Heart className="w-5 h-5 sm:w-7 sm:h-7 text-green-500" />
         </div>
-        <h3 className="text-xl sm:text-3xl font-bold text-center text-green-600 mt-3">
+        <h3 className="text-lg sm:text-2xl font-bold text-center text-green-600 mt-3">
           Chinni...
         </h3>
       </motion.div>
 
       <motion.div
-        className="w-full max-w-sm sm:max-w-md mx-auto my-6"
+        className="w-full max-w-xs sm:max-w-sm mx-auto my-6"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6 }}
@@ -44,7 +44,7 @@ export default function BirthdayCelebration() {
           onClick={() => setIsCardOpen(!isCardOpen)}
         >
           <div
-            className={`bg-gradient-to-r from-green-400 to-purple-500 rounded-2xl sm:rounded-3xl p-10 sm:p-14 shadow-lg transition-all duration-700 transform ${
+            className={`bg-gradient-to-r from-green-400 to-purple-500 rounded-xl sm:rounded-2xl p-8 sm:p-12 shadow-lg transition-all duration-700 transform ${
               isCardOpen ? "scale-95" : "scale-100"
             }`}
           >
@@ -57,12 +57,12 @@ export default function BirthdayCelebration() {
                   ease: "linear",
                 }}
               >
-                <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-200" />
+                <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-200" />
               </motion.div>
             </div>
 
             <div className="text-center text-white">
-              <p className="text-base sm:text-lg font-medium mb-4">
+              <p className="text-sm sm:text-base font-medium mb-3">
                 Tap to {isCardOpen ? "close" : "open"}
               </p>
               <div className="flex justify-center">
@@ -76,7 +76,7 @@ export default function BirthdayCelebration() {
                     repeat: Number.POSITIVE_INFINITY,
                   }}
                 >
-                  <Gift className="w-10 h-10 sm:w-14 sm:h-14 text-white" />
+                  <Gift className="w-8 h-8 sm:w-12 sm:h-12 text-white" />
                 </motion.div>
               </div>
             </div>
@@ -86,7 +86,7 @@ export default function BirthdayCelebration() {
           <AnimatePresence>
             {isCardOpen && (
               <motion.div
-                className="absolute inset-0 bg-white rounded-2xl sm:rounded-3xl p-4 shadow-xl shadow-rose-100 flex flex-col items-center justify-center"
+                className="absolute inset-0 bg-white rounded-xl sm:rounded-2xl p-3 shadow-xl shadow-rose-100 flex flex-col items-center justify-center"
                 initial={{ rotate: 2, rotateX: -90, opacity: 0 }}
                 animate={{
                   rotate: isCardOpen ? 0 : 2,
@@ -98,10 +98,10 @@ export default function BirthdayCelebration() {
                 transition={{ duration: 0.5 }}
               >
                 <div className="w-full h-full flex items-center justify-center">
-                  <img
-                    src="/assets_task_01jtw8csp6e7e9thmhw5egga7c_1746852608_img_2 (1).webp"
-                    alt="Birthday card"
-                    className="w-full h-full object-contain rounded-xl"
+                  <video
+                    src="WhatsApp Video 2025-05-10 at 12.27.03_d5da05a6.mp4"
+                    controls
+                    className="w-full h-full object-contain rounded-lg"
                   />
                 </div>
               </motion.div>
@@ -111,13 +111,13 @@ export default function BirthdayCelebration() {
       </motion.div>
 
       <motion.div
-        className="w-full max-w-sm sm:max-w-md mt-4"
+        className="w-full max-w-xs sm:max-w-sm mt-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
       >
         <div className="text-center">
-          <p className="text-sm sm:text-lg text-purple-700 mb-4">
+          <p className="text-xs sm:text-sm text-purple-700 mb-3">
             Just wanted to remind you—you're my favorite person. You make me
             happy by you being happy.. May every wish you make today come true.
             You deserve the world, and I'll always be here to remind you of
@@ -126,7 +126,7 @@ export default function BirthdayCelebration() {
           </p>
           <div className="flex justify-center items-center gap-2">
             <p className="text-green-600 font-medium">
-              Enjoy the day yaar!! 🫶
+              Thank you for visiting this small wish!! 
             </p>
           </div>
         </div>
