@@ -107,7 +107,7 @@ export default function Home() {
       </motion.div>}
 
       {/* You can change the background song if you want */}
-      <audio ref={audioRef} src="public/birthday.mp3" preload="auto" loop />
+      <audio ref={audioRef} src="birthday.mp3" preload="auto" loop />
 
       {/* Decorative elements */}
       <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-0 overflow-hidden">
