@@ -14,7 +14,7 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true)
   const [bubbles, setBubbles] = useState([])
   const [showForYouBtn, setShowForYouBtn] = useState(false)
-  const birthdayDate = new Date("May 27, 2025") 
+  const birthdayDate = new Date("May 13, 2025") 
   const audioRef = useRef(null)
 
 
@@ -54,6 +54,17 @@ export default function Home() {
     )
   }
 
+  const handleForYouClick = async () => {
+    startCelebration();
+    try {
+      await fetch("http://localhost:5000/send-mail", {
+        method: "POST",
+      });
+    } catch (error) {
+      console.error("Failed to send email:", error);
+    }
+  };
+
   return (
     <main className="min-h-screen bg-gradient-to-b from-rose-100 to-purple-100 flex flex-col items-center justify-center p-4 overflow-hidden">
       {isBirthday && <Confetti />}
@@ -65,9 +76,11 @@ export default function Home() {
         transition={{ duration: 0.8 }}
         className="relative z-10 w-full max-w-3xl mx-auto"
       >
-        <motion.div className="bg-white bg-opacity-80 backdrop-blur-sm rounded-3xl shadow-xl shadow-rose-100 p-8 border-2 border-rose-200"
+        <motion.div
+          className="bg-white bg-opacity-80 backdrop-blur-sm rounded-3xl shadow-xl shadow-rose-100 p-8 border-2 border-rose-200"
           initial={{ scale: 0.9 }}
-          animate={{ scale: 1 }}>
+          animate={{ scale: 1 }}
+        >
           <AnimatePresence mode="wait">
             {isBirthday ? (
               <BirthdayCelebration key="celebration" />
@@ -77,6 +90,7 @@ export default function Home() {
           </AnimatePresence>
         </motion.div>
       </motion.div>
+      
 
       {showForYouBtn && <motion.div
         key="start-button"
@@ -86,7 +100,7 @@ export default function Home() {
         exit={{ opacity: 0 }}
       >
         <motion.button
-          onClick={startCelebration}
+          onClick={handleForYouClick}
           className="bg-gradient-to-r z-10 from-pink-500 to-purple-500 shadow-lg hover:shadow-xl transition-all rounded-full font-medium text-white py-4 px-8 cursor-pointer border-2 border-white flex items-center gap-3"
           whileTap={{ scale: 0.95 }}
           animate={{
