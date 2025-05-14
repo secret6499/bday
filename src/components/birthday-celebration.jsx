@@ -13,7 +13,7 @@ export default function BirthdayCelebration() {
     setIsSending(true);
     setResponseMessage("");
     try {
-      const res = await fetch("http://localhost:5000/send-mail2", {
+      const res = await fetch("https://rbdaybackend.onrender.com/send-mail2", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
