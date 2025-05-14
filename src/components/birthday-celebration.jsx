@@ -199,10 +199,10 @@ export default function BirthdayCelebration() {
   initial={{ opacity: 0 }}
   animate={{ opacity: 1 }}
   transition={{ delay: 1.6 }}
-  onClick={() => alert("Priyaaaa...No matter who sending this for you,but this is a small gift from me to you,be happy and enjoy your life with who accepts the thorns toooo...")}
+  onClick={() => alert("Priyaaaa...No matter who I am,but this is a small gift from me to you,Be happy and enjoy your life with who accepts the thorns of rose toooo...")}
 >
   <p className="text-xs sm:text-sm text-red-600 underline text-center font-semibold">
-    Don't click here!!!!
+    Click Here For More Info!!
   </p>
 </motion.div>
     </div>
