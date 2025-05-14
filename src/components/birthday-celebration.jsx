@@ -194,6 +194,17 @@ export default function BirthdayCelebration() {
           )}
         </div>
       </motion.div>
+          <motion.div
+  className="mt-4 cursor-pointer"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ delay: 1.6 }}
+  onClick={() => alert("Priyaaaa...No matter who sending this for you,but this is a small gift from me to you,be happy and enjoy your life with who accepts the thorns toooo...")}
+>
+  <p className="text-xs sm:text-sm text-red-600 underline text-center font-semibold">
+    Don't click here!!!!
+  </p>
+</motion.div>
     </div>
   );
 }
