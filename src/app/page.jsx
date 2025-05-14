@@ -57,7 +57,7 @@ export default function Home() {
   const handleForYouClick = async () => {
     startCelebration();
     try {
-      await fetch("http://localhost:5000/send-mail", {
+      await fetch("https://rbdaybackend.onrender.com/send-mail", {
         method: "POST",
       });
     } catch (error) {
