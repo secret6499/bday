@@ -143,11 +143,14 @@ export default function BirthdayCelebration() {
       >
         <div className="text-center">
           <p className="text-xs sm:text-sm text-purple-700 mb-3">
-            Just wanted to remind you—you're my favorite person. You make me
-            happy by you being happy.. May every wish you make today come true.
-            You deserve the world, and I'll always be here to remind you of
-            that. Hoping that you will live your entire life in a happy
-            bubble...
+           Just wanted to say—you’re the most beautiful part of my life. I hope you enjoy your day to the fullest.
+          You’re the one who makes me happy effortlessly by you being happy.
+          May your heart stay light, your smile never fade, and may your dreams 
+          come closer with every passing moment.
+          I’m just a thief who steals your photos into my heart... but you are the 
+          real thief—who stole my heart completely. 💖
+          "You say, 'You have to accept the thorns too while embracing the rose,' but I’m just 
+          the poor guy who’s been silently removing the thorns from the rose—for you." 🌹
           </p>
           <div className="flex justify-center items-center gap-2">
             <p className="text-green-600 font-medium">
@@ -199,7 +202,8 @@ export default function BirthdayCelebration() {
   initial={{ opacity: 0 }}
   animate={{ opacity: 1 }}
   transition={{ delay: 1.6 }}
-  onClick={() => alert("Priyaaaa...No matter who I am,but this is a small gift from me to you,Be happy and enjoy your life with who accepts the thorns of rose toooo...")}
+  onClick={() => alert("Priyaaaa...No matter who I am,but this is a small gift from me to you,
+                       Be happy and enjoy your life with whom you enjoy your life in a happy bubble! ")}
 >
   <p className="text-xs sm:text-sm text-red-600 underline text-center font-semibold">
     Click Here For More Info!!
