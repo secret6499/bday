@@ -1,9 +1,34 @@
-import { useState } from "react"
-import { AnimatePresence, motion } from "framer-motion"
-import { Heart, Sparkles, Gift, Cake } from "lucide-react"
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Heart, Sparkles, Gift, Cake, Send } from "lucide-react";
 
 export default function BirthdayCelebration() {
-  const [isCardOpen, setIsCardOpen] = useState(false)
+  const [isCardOpen, setIsCardOpen] = useState(false);
+  const [showReplyBox, setShowReplyBox] = useState(false);
+  const [replyMessage, setReplyMessage] = useState("");
+  const [isSending, setIsSending] = useState(false);
+  const [responseMessage, setResponseMessage] = useState("");
+
+  const handleSendReply = async () => {
+    setIsSending(true);
+    setResponseMessage("");
+    try {
+      const res = await fetch("http://localhost:5000/send-mail2", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ message: replyMessage }),
+      });
+      const text = await res.text();
+      setResponseMessage(text);
+    } catch (err) {
+      setResponseMessage("Failed to send message.");
+    } finally {
+      setIsSending(false);
+      setReplyMessage("");
+    }
+  };
 
   return (
     <div className="flex flex-col items-center px-4 sm:px-6 lg:px-8">
@@ -89,10 +114,10 @@ export default function BirthdayCelebration() {
                 className="absolute inset-0 bg-white rounded-xl sm:rounded-2xl p-3 shadow-xl shadow-rose-100 flex flex-col items-center justify-center"
                 initial={{ rotate: 2, rotateX: -90, opacity: 0 }}
                 animate={{
-                  rotate: isCardOpen ? 0 : 2,
-                  rotateX: isCardOpen ? 0 : -90,
-                  opacity: isCardOpen ? 1 : 0,
-                  zIndex: isCardOpen ? 10 : -1,
+                  rotate: 0,
+                  rotateX: 0,
+                  opacity: 1,
+                  zIndex: 10,
                 }}
                 exit={{ rotateX: -90, opacity: 0 }}
                 transition={{ duration: 0.5 }}
@@ -126,9 +151,47 @@ export default function BirthdayCelebration() {
           </p>
           <div className="flex justify-center items-center gap-2">
             <p className="text-green-600 font-medium">
-              Thank you for visiting this small wish!! 
+              Thank you for visiting this small wish!!
             </p>
           </div>
+        </div>
+      </motion.div>
+
+      <motion.div
+        className="w-full max-w-xs sm:max-w-sm mt-6"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.3 }}
+      >
+        <div className="text-center">
+          {!showReplyBox ? (
+            <button
+              onClick={() => setShowReplyBox(true)}
+              className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-xl text-sm font-semibold shadow-lg"
+            >
+              Reply / Thank You
+            </button>
+          ) : (
+            <div className="flex flex-col gap-3 items-center text-black">
+              <textarea
+                value={replyMessage}
+                onChange={(e) => setReplyMessage(e.target.value)}
+                rows={3}
+                className="w-full p-2 rounded-lg border border-green-300 focus:outline-none focus:ring-2 focus:ring-green-400 text-sm"
+                placeholder="Write your message here..."
+              ></textarea>
+              <button
+                onClick={handleSendReply}
+                className="flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-xl text-sm font-semibold shadow"
+              >
+                {isSending ? "Sending..." : "Send"}
+                <Send className="w-4 h-4" />
+              </button>
+              {responseMessage && (
+                <p className="text-sm text-green-700">{responseMessage}</p>
+              )}
+            </div>
+          )}
         </div>
       </motion.div>
     </div>
