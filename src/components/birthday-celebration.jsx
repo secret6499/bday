@@ -202,8 +202,7 @@ export default function BirthdayCelebration() {
   initial={{ opacity: 0 }}
   animate={{ opacity: 1 }}
   transition={{ delay: 1.6 }}
-  onClick={() => alert("Priyaaaa...No matter who I am,but this is a small gift from me to you,
-                       Be happy and enjoy your life with whom you enjoy your life in a happy bubble! ")}
+  onClick={() => alert("Priyaaaa...No matter who I am,but this is a small gift from me to you,Be happy and enjoy your life with whom you enjoy your life in a happy bubble! ")}
 >
   <p className="text-xs sm:text-sm text-red-600 underline text-center font-semibold">
     Click Here For More Info!!
