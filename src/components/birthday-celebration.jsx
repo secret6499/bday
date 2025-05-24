@@ -158,7 +158,7 @@ export default function BirthdayCelebration() {
           </p>
           <div className="flex justify-center items-center gap-2">
             <p className="text-green-600 font-medium">
-              Once again,Wishing you many more candles to blow priyaaa!!💖
+              Once again,Wishing you many more candles to blow !!💖
               Thank you for visiting this small wish!!
             </p>
           </div>
