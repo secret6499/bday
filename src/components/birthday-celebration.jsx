@@ -52,7 +52,7 @@ export default function BirthdayCelebration() {
           <Heart className="w-5 h-5 sm:w-7 sm:h-7 text-green-500" />
         </div>
         <h3 className="text-lg sm:text-2xl font-bold text-center text-green-600 mt-3">
-          dude...
+          Chinni...
         </h3>
       </motion.div>
 
@@ -158,7 +158,7 @@ export default function BirthdayCelebration() {
           </p>
           <div className="flex justify-center items-center gap-2">
             <p className="text-green-600 font-medium">
-              Once again,Wishing you many more candles to blow !!💖
+              Once again,Wishing you many more candles to blow Raghavi priyaa!!💖
               Thank you for visiting this small wish!!
             </p>
           </div>
@@ -207,7 +207,7 @@ export default function BirthdayCelebration() {
   initial={{ opacity: 0 }}
   animate={{ opacity: 1 }}
   transition={{ delay: 1.6 }}
-  onClick={() => alert("Priyaaaa...No matter who I am,but this is a small wish from me to you,Be happy and enjoy your life with whom you enjoy your life in a happy bubble!once again Happy Birthday chinni...💖")}
+  onClick={() => alert("Nothing much Chinni..No matter who I am,but this is a small wish from me for you,Be happy and enjoy your life with whom you enjoy your life in a happy bubble!once again Happy Birthday chinni...💖")}
 >
   <p className="text-xs sm:text-sm text-red-600 underline text-center font-semibold">
     Click Here For More Info!!
