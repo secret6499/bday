@@ -52,7 +52,7 @@ export default function BirthdayCelebration() {
           <Heart className="w-5 h-5 sm:w-7 sm:h-7 text-green-500" />
         </div>
         <h3 className="text-lg sm:text-2xl font-bold text-center text-green-600 mt-3">
-          Chinni...
+          dude...
         </h3>
       </motion.div>
 
